@@ -2,8 +2,9 @@ import React from 'react';
 import './App.css';
 import { io } from 'socket.io-client'
 import axios from 'axios'
-
-const socket = io('http://127.0.0.1:5000/client');
+const host = 'http://2b1a932428.zicp.vip:59139'
+// const host = 'http://223.167.168.209:5000'
+const socket = io(`${host}/client`)
 class App extends React.Component {
   constructor(porps) {
     super(porps)
@@ -24,7 +25,7 @@ class App extends React.Component {
   }
   onAxios = () => {
     console.log('发送请求');
-    axios.get('http://localhost:5000/api/test').then((res) => {
+    axios.get(`${host}/api/test`).then((res) => {
       console.log(res);
     }).catch(err => {
       console.log(err);
