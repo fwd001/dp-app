@@ -2,9 +2,10 @@ import React from 'react';
 import './App.css';
 import { io } from 'socket.io-client'
 import axios from 'axios'
-const host = 'http://2b1a932428.zicp.vip:59139'
-// const host = 'http://223.167.168.209:5000'
+
+const host = 'http://2b1a932428.zicp.vip'
 const socket = io(`${host}/client`)
+
 class App extends React.Component {
   constructor(porps) {
     super(porps)
